@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <!-- .Pack -->
+  <ItemGroup>
+    <!-- <Content Include=".pack\*.*;.pack\**;.pack\**\*" PackagePath=".pack\" Exclude=".pack\Dox\~*.*" /> -->
+    <!-- If I remove the below section they will not be shown in the solution explorer -->
+    <Folder Include=".pack\Logs\" />
+    <Folder Include=".pack\Shorx\" /> <!-- May remove later after making the solution work -->
+    <None Include=".pack\Version.txt" />
+    <None Include=".pack\Dox\file1.txt" />
+    <None Include=".pack\Dox\file2.txt" />
+    <None Include="pack\**;pack\**;pack\*.*;pack\Dox\*.*" />
+    <!-- New additions -->
+      <Content Include=".pack\*.*;.pack\**;.pack\**\*" Pack="true" IncludeInPackage="true" PackagePath=".pack\" Exclude=".pack\Dox\~*.*" />  
+
+    <!--<Content Update=".pack\**" Pack="true" IncludeInPackage="true" PackagePath="content\.pack\;contentFiles\.pack\;" />
+    <Content Update="build\**" Pack="true" IncludeInPackage="true" PackagePath="content\build\;contentFiles\build\;" />-->
+    <!-- <Content Update=".pack\**" Pack="true" IncludeInPackage="true" PackagePath="content\any\any\;contentFiles\any\any\;;" /> -->
+    <!-- <Content Update="build\**" Pack="true" IncludeInPackage="true" PackagePath="content\any\any\;contentFiles\any\any\;;" /> -->
+    <!--<Content Update=".pack\**" Pack="true" IncludeInPackage="true" PackagePath="..\content\.pack\**" />
+    <Content Update="build\**" Pack="true" IncludeInPackage="true" PackagePath="..\content\build\**" />-->
+    <None Update="build\WeRTheBest.NugLib.targets" PackagePath="build\WeRTheBest.NugLib.targets" />
+    <!-- Not sure if I need this -->
+  </ItemGroup>
+
+  <!-- Build -->
+  <ItemGroup>
+    <Folder Include="build\Archives\" />
+    <Content Include="build\*.targets" Pack="true" IncludeInPackage="true" PackagePath="build\" />
+  </ItemGroup>
+
+  <!-- Imports -->
+  <Import Project="build\build.targets" />
+
+  <!-- Removed temporarily! -->
+   <Import Project=".pack\package.csproj" Condition="Exists('.pack\package.csproj')" /> 
+
+</Project>

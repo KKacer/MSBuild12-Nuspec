@@ -1,0 +1,33 @@
+﻿<package >
+  <!--<metadata>
+      <id>WeRTheBest.NugLib</id>
+      <version>0.8.2.21</version>
+      <description>WeRTheBest.NugLib</description>
+    <authors>KasraK</authors>
+    <PackageReleaseNotes>
+        tried to make files listed, getting the messages from the targets file
+      </PackageReleaseNotes>
+  </metadata>-->
+  <files>
+    <file src=".pack\**" target="content\.pack" />
+    <!--<file src=".pack\*.*;.pack\**\*" target="content\.pack" />
+    <file src=".pack\**\*" target="content\.pack" />-->
+    <!-- <file src=".pack\package.csproj" target=".pack" /> -->
+
+    <file src="build\*.targets" target="build" />
+
+  </files>
+</package>
+
+
+<!--<package >
+  <files>
+    <file src=".pack\**" target="Content\.pack" />
+    <file src=".pack\*.*;.pack\**\*" target="Content\.pack" />
+    <file src=".pack\**\*" target="Content\.pack" />
+    --><!-- <file src=".pack\package.csproj" target=".pack" /> --><!--
+
+    <file src="build\*.targets" target="build" />
+
+  </files>
+</package>-->

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--! NugLib Engine version 1 -->
+  <!-- ===================================================================================== -->
+  <!-- 1. Properties -->
+
+  <PropertyGroup>
+    <Temp>D:\</Temp>
+  </PropertyGroup>
+
+  <!-- ===================================================================================== -->
+  <!-- 2. Imports and usings -->
+
+
+  <!-- ===================================================================================== -->
+
+<!-- Some Tasks for backup and cloud the current for the current assembly, -->
+<!--   Which I want all the consumer assemblies also have these -->
+
+  <!-- ===================================================================================== -->
+  <!-- 6. TestVars -->
+
+  <Target Name="TestVars"  BeforeTargets="Build">
+
+    <Message Text="Subject 1: '$(PackageId)'" Importance="high" />
+
+    <!--<Message Text="Vars options: " Importance="high" />
+    <Message Text="Subject 1: '$(Subject)'" Importance="high" />
+    <Message Text="Subject 2: &quot;$(Subject)&quot;" Importance="high" />
+    <Message Text="Subject 3: $(Subject)" Importance="high" />
+    <Message Text="xOutLocation: $(xOutLocation)" Importance="high" />
+    <Message Text="xOutParent: $(xOutParent)" Importance="high" />
+    --><!-- Bugged: <Message Text="xOutParent2: $(xOutParent2)" Importance="high" /> --><!--
+    <Message Text="xOutParent3: $(xOutParent3)" Importance="high" />
+    <Message Text="Lib Folder Address calculated: $(LibFolderAddress)" Importance="high" />
+    <Message Text="ZipFile1: $(ZipFile1)" Importance="high" />
+    <Message Text="ZipFile2: $(ZipFile2)" Importance="high" />-->
+  </Target>
+
+  <!-- ===================================================================================== -->
+
+
+</Project>

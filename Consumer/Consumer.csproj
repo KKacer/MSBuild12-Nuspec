@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>ConsumerTest</AssemblyName>
+    <RootNamespace>ConsumerTest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WeRTheBest.NugLibX" Version="0.8.2.11" />
+  </ItemGroup>
+
+  <!-- .Pack Folder and the parts -->
+
+  <!--<Import Project=".pack\package.csproj" Condition="Exists('.pack\package.csproj')" />
+  <Import Project=".pack\build.targets" />-->
+
+</Project>

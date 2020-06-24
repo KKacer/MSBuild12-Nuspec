@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- <Import Project="..\contentFiles\any\any\.pack\package.targets" /> -->
+  <!-- <Import Project="..\contentFiles\any\any\build\build.targets" /> -->
+   <Import Project="$(MSBuildThisFileDirectory)..\build\build.targets" />    
+  <!-- <Import Project="$(MSBuildThisFileDirectory)..\.pack\package.targets" />  -->
+  <!-- <Import Project="$(MSBuildThisFileDirectory)..\build\WeRTheBest.NugLib.nuspec" Condition="Exists('$(MSBuildThisFileDirectory)..\build\WeRTheBest.NugLib.nuspec')" /> -->
+  <!--<Import Project="..\contentFiles\WeRTheBest.NugLib.nuspec" Condition="Exists('..\contentFiles\build\WeRTheBest.NugLib.nuspec')" />
+  <Import Project="..\content\WeRTheBest.NugLib.nuspec" Condition="Exists('..\content\build\WeRTheBest.NugLib.nuspec')" />
+  <Import Project="..\contentFiles\.pack\package.targets" Condition="Exists('..\contentFiles\.pack\package.targets')" />
+  <Import Project="..\contentFiles\build\build.targets"  Condition="Exists('..\contentFiles\build\build.targets')" />-->
+  <!-- seems didn't work, wanted it to be in the next project -->
+
+  <!--<Import Project="..\.pack\package.targets" />
+  <Import Project="build\build.targets" /> --><!-- wanted it to be in the next project --><!---->
+  <PropertyGroup>
+    <!-- MHM: Properties -->
+    <RootFolder>$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))</RootFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NugLibItems Include="$(MSBuildThisFileDirectory)..\build\**" />
+    <NugLibItems2 Include="$(MSBuildThisFileDirectory)..\.pack\**" />
+  </ItemGroup>
+
+  <Target Name="TestVars" BeforeTargets="BeforeCompile" >
+    <!-- ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...   -->
+    <Message Importance="high" Text="==== MHM: Copying NugLib:" />
+    <Message Importance="high" Text="== Here ==" />
+    <Message Importance="high" Text="== RootFolder : $(RootFolder)" />
+    <Message Importance="high" Text="== NugLibItems : @(NugLibItems)" />
+    <Message Importance="high" Text="== NugLibItems 2: @(NugLibItems2)" />
+    <!-- <Message Importance="high" Text="== NugLibItems 3: @(NugLibItems3)" /> -->
+  </Target>
+
+  <!-- ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...  -->
+
+  <!--
+  <Target Name="CopyBuild" BeforeTargets="BeforeCompile" >
+
+   <Message Importance="high" Text="==== MHM: Copying NugLib:" />
+    <Message Importance="high" Text="@(NugLibItems)" />
+    <Copy SourceFiles="@(NugLibItems)"
+          DestinationFiles="$(MsBuildProjectDirectory)\build\%(RecursiveDir)%(Filename)%(Extension)"
+          />
+</Target> 
+-->
+  <!-- ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...  -->
+
+  <!--
+  <Target Name="CopyPack" BeforeTargets="BeforeCompile" >
+    <Message Importance="high" Text="==== MHM: Copying NugLib:" />
+    <Message Importance="high" Text="@(NugLibItems2)" />
+    <Copy SourceFiles="@(NugLibItems2)"
+          DestinationFiles="$(MsBuildProjectDirectory)\.pack\%(RecursiveDir)%(Filename)%(Extension)"
+    />
+  </Target>    
+    -->
+
+    <!-- ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...    -->
+
+</Project>
